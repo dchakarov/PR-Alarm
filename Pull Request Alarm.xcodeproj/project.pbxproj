@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3399CE2A2481CA7800A328FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3399CE292481CA7800A328FD /* AppDelegate.swift */; };
+		3399CE2C2481CA7800A328FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3399CE2B2481CA7800A328FD /* ContentView.swift */; };
+		3399CE2E2481CA7B00A328FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3399CE2D2481CA7B00A328FD /* Assets.xcassets */; };
+		3399CE312481CA7B00A328FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3399CE302481CA7B00A328FD /* Preview Assets.xcassets */; };
+		3399CE342481CA7B00A328FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3399CE322481CA7B00A328FD /* Main.storyboard */; };
+		3399CE402481CA7B00A328FD /* Pull_Request_AlarmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3399CE3F2481CA7B00A328FD /* Pull_Request_AlarmTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3399CE3C2481CA7B00A328FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3399CE1E2481CA7800A328FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3399CE252481CA7800A328FD;
+			remoteInfo = "Pull Request Alarm";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3399CE262481CA7800A328FD /* Pull Request Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pull Request Alarm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3399CE292481CA7800A328FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3399CE2B2481CA7800A328FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3399CE2D2481CA7B00A328FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3399CE302481CA7B00A328FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3399CE332481CA7B00A328FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3399CE352481CA7B00A328FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3399CE362481CA7B00A328FD /* Pull_Request_Alarm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pull_Request_Alarm.entitlements; sourceTree = "<group>"; };
+		3399CE3B2481CA7B00A328FD /* Pull Request AlarmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pull Request AlarmTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3399CE3F2481CA7B00A328FD /* Pull_Request_AlarmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pull_Request_AlarmTests.swift; sourceTree = "<group>"; };
+		3399CE412481CA7B00A328FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3399CE232481CA7800A328FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3399CE382481CA7B00A328FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3399CE1D2481CA7800A328FD = {
+			isa = PBXGroup;
+			children = (
+				3399CE282481CA7800A328FD /* Pull Request Alarm */,
+				3399CE3E2481CA7B00A328FD /* Pull Request AlarmTests */,
+				3399CE272481CA7800A328FD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3399CE272481CA7800A328FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3399CE262481CA7800A328FD /* Pull Request Alarm.app */,
+				3399CE3B2481CA7B00A328FD /* Pull Request AlarmTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3399CE282481CA7800A328FD /* Pull Request Alarm */ = {
+			isa = PBXGroup;
+			children = (
+				3399CE292481CA7800A328FD /* AppDelegate.swift */,
+				3399CE2B2481CA7800A328FD /* ContentView.swift */,
+				3399CE2D2481CA7B00A328FD /* Assets.xcassets */,
+				3399CE322481CA7B00A328FD /* Main.storyboard */,
+				3399CE352481CA7B00A328FD /* Info.plist */,
+				3399CE362481CA7B00A328FD /* Pull_Request_Alarm.entitlements */,
+				3399CE2F2481CA7B00A328FD /* Preview Content */,
+			);
+			path = "Pull Request Alarm";
+			sourceTree = "<group>";
+		};
+		3399CE2F2481CA7B00A328FD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3399CE302481CA7B00A328FD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3399CE3E2481CA7B00A328FD /* Pull Request AlarmTests */ = {
+			isa = PBXGroup;
+			children = (
+				3399CE3F2481CA7B00A328FD /* Pull_Request_AlarmTests.swift */,
+				3399CE412481CA7B00A328FD /* Info.plist */,
+			);
+			path = "Pull Request AlarmTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3399CE252481CA7800A328FD /* Pull Request Alarm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3399CE442481CA7B00A328FD /* Build configuration list for PBXNativeTarget "Pull Request Alarm" */;
+			buildPhases = (
+				3399CE222481CA7800A328FD /* Sources */,
+				3399CE232481CA7800A328FD /* Frameworks */,
+				3399CE242481CA7800A328FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pull Request Alarm";
+			productName = "Pull Request Alarm";
+			productReference = 3399CE262481CA7800A328FD /* Pull Request Alarm.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3399CE3A2481CA7B00A328FD /* Pull Request AlarmTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3399CE472481CA7B00A328FD /* Build configuration list for PBXNativeTarget "Pull Request AlarmTests" */;
+			buildPhases = (
+				3399CE372481CA7B00A328FD /* Sources */,
+				3399CE382481CA7B00A328FD /* Frameworks */,
+				3399CE392481CA7B00A328FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3399CE3D2481CA7B00A328FD /* PBXTargetDependency */,
+			);
+			name = "Pull Request AlarmTests";
+			productName = "Pull Request AlarmTests";
+			productReference = 3399CE3B2481CA7B00A328FD /* Pull Request AlarmTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3399CE1E2481CA7800A328FD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Dimitar Chakarov";
+				TargetAttributes = {
+					3399CE252481CA7800A328FD = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					3399CE3A2481CA7B00A328FD = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 3399CE252481CA7800A328FD;
+					};
+				};
+			};
+			buildConfigurationList = 3399CE212481CA7800A328FD /* Build configuration list for PBXProject "Pull Request Alarm" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3399CE1D2481CA7800A328FD;
+			productRefGroup = 3399CE272481CA7800A328FD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3399CE252481CA7800A328FD /* Pull Request Alarm */,
+				3399CE3A2481CA7B00A328FD /* Pull Request AlarmTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3399CE242481CA7800A328FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3399CE342481CA7B00A328FD /* Main.storyboard in Resources */,
+				3399CE312481CA7B00A328FD /* Preview Assets.xcassets in Resources */,
+				3399CE2E2481CA7B00A328FD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3399CE392481CA7B00A328FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3399CE222481CA7800A328FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3399CE2C2481CA7800A328FD /* ContentView.swift in Sources */,
+				3399CE2A2481CA7800A328FD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3399CE372481CA7B00A328FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3399CE402481CA7B00A328FD /* Pull_Request_AlarmTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3399CE3D2481CA7B00A328FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3399CE252481CA7800A328FD /* Pull Request Alarm */;
+			targetProxy = 3399CE3C2481CA7B00A328FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3399CE322481CA7B00A328FD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3399CE332481CA7B00A328FD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3399CE422481CA7B00A328FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3399CE432481CA7B00A328FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		3399CE452481CA7B00A328FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Pull Request Alarm/Pull_Request_Alarm.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Pull Request Alarm/Preview Content\"";
+				DEVELOPMENT_TEAM = E4Z7875R8J;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Pull Request Alarm/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dchakarov.Pull-Request-Alarm";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3399CE462481CA7B00A328FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Pull Request Alarm/Pull_Request_Alarm.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Pull Request Alarm/Preview Content\"";
+				DEVELOPMENT_TEAM = E4Z7875R8J;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Pull Request Alarm/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dchakarov.Pull-Request-Alarm";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		3399CE482481CA7B00A328FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = E4Z7875R8J;
+				INFOPLIST_FILE = "Pull Request AlarmTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dchakarov.Pull-Request-AlarmTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pull Request Alarm.app/Contents/MacOS/Pull Request Alarm";
+			};
+			name = Debug;
+		};
+		3399CE492481CA7B00A328FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = E4Z7875R8J;
+				INFOPLIST_FILE = "Pull Request AlarmTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dchakarov.Pull-Request-AlarmTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pull Request Alarm.app/Contents/MacOS/Pull Request Alarm";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3399CE212481CA7800A328FD /* Build configuration list for PBXProject "Pull Request Alarm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3399CE422481CA7B00A328FD /* Debug */,
+				3399CE432481CA7B00A328FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3399CE442481CA7B00A328FD /* Build configuration list for PBXNativeTarget "Pull Request Alarm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3399CE452481CA7B00A328FD /* Debug */,
+				3399CE462481CA7B00A328FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3399CE472481CA7B00A328FD /* Build configuration list for PBXNativeTarget "Pull Request AlarmTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3399CE482481CA7B00A328FD /* Debug */,
+				3399CE492481CA7B00A328FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3399CE1E2481CA7800A328FD /* Project object */;
+}
