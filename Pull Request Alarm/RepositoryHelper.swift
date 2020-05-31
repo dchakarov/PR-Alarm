@@ -18,12 +18,34 @@ class RepositoryHelper: ObservableObject {
             self.poll()
         }
     }
+    @Published var enterpriseUrl: String? {
+        didSet {
+            self.poll()
+        }
+    }
+    var org: String?
     var cancellable: AnyCancellable?
     var prCancellables: [AnyCancellable] = []
+    let publicUrl = "api.github.com"
+    
+    var baseUrl: String {
+        if let url = self.enterpriseUrl {
+            return "\(url)/api/v3"
+        } else {
+            return publicUrl
+        }
+    }
     
     func poll() {
         guard !githubToken.isEmpty else { return }
-        var urlRequest = URLRequest(url: URL(string: "https://api.github.com/user/repos")!)
+        let urlString: String = {
+            if let org = org {
+                return "https://\(baseUrl)/orgs/\(org)/repos"
+            } else {
+                return "https://\(baseUrl)/user/repos"
+            }
+        }()
+        var urlRequest = URLRequest(url: URL(string: urlString)!)
         urlRequest.addValue("token \(githubToken)", forHTTPHeaderField: "Authorization")
         cancellable = URLSession.shared.dataTaskPublisher(for: urlRequest)
             .map { $0.data }
@@ -43,7 +65,7 @@ class RepositoryHelper: ObservableObject {
     
     func pulls(for repo: String) {
         guard !githubToken.isEmpty else { return }
-        var urlRequest = URLRequest(url: URL(string: "https://api.github.com/repos/\(repo)/pulls")!)
+        var urlRequest = URLRequest(url: URL(string: "https://\(baseUrl)/repos/\(repo)/pulls")!)
         urlRequest.addValue("token \(githubToken)", forHTTPHeaderField: "Authorization")
         let publisher = URLSession.shared.dataTaskPublisher(for: urlRequest)
             .map { $0.data }
@@ -68,7 +90,7 @@ class RepositoryHelper: ObservableObject {
     
     func pull(repo: String, number: Int) {
         guard !githubToken.isEmpty else { return }
-        var urlRequest = URLRequest(url: URL(string: "https://api.github.com/repos/\(repo)/pulls/\(number)")!)
+        var urlRequest = URLRequest(url: URL(string: "https://\(baseUrl)/repos/\(repo)/pulls/\(number)")!)
         urlRequest.addValue("token \(githubToken)", forHTTPHeaderField: "Authorization")
         let publisher = URLSession.shared.dataTaskPublisher(for: urlRequest)
         .map { $0.data }
@@ -83,8 +105,14 @@ class RepositoryHelper: ObservableObject {
         prCancellables.append(publisher)
     }
     
-    func save(_ token: String) {
+    func settingsUpdated(token: String, enterpriseEnabled: Bool, baseUrl: String?, org: String?) {
         githubToken = token
+        self.org = org
+        if enterpriseEnabled {
+            enterpriseUrl = baseUrl
+        } else {
+            enterpriseUrl = nil
+        }
     }
 }
 
