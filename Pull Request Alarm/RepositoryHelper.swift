@@ -13,19 +13,11 @@ class RepositoryHelper: ObservableObject {
     var repositories = [Repository]()
     @Published var pulls = [String: [PullRequest]]()
     @Published var reposWithPRs: [Repository] = []
-    @Published var githubToken: String = "" {
-        didSet {
-            self.poll()
-        }
-    }
-    @Published var enterpriseUrl: String? {
-        didSet {
-            self.poll()
-        }
-    }
+    @Published var userLogin: String = ""
+    @Published var githubToken: String = ""
+    @Published var enterpriseUrl: String?
     var org: String?
-    var cancellable: AnyCancellable?
-    var prCancellables: [AnyCancellable] = []
+    var cancellables: [AnyCancellable] = []
     let publicUrl = "api.github.com"
     
     var baseUrl: String {
@@ -38,8 +30,26 @@ class RepositoryHelper: ObservableObject {
     
     func poll() {
         guard !githubToken.isEmpty else { return }
+        var urlRequest = URLRequest(url: URL(string: "https://\(baseUrl)/user")!)
+        urlRequest.addValue("token \(githubToken)", forHTTPHeaderField: "Authorization")
+        let publisher = URLSession.shared.dataTaskPublisher(for: urlRequest)
+            .map { $0.data }
+            .decode(type: User.self, decoder: JSONDecoder())
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { receive in
+                print(receive)
+            }, receiveValue: { user in
+                self.userLogin = user.login
+                print(user)
+                self.repos()
+            })
+        cancellables.append(publisher)
+    }
+    
+    func repos() {
+        guard !githubToken.isEmpty else { return }
         let urlString: String = {
-            if let org = org {
+            if let org = org, !org.isEmpty {
                 return "https://\(baseUrl)/orgs/\(org)/repos"
             } else {
                 return "https://\(baseUrl)/user/repos"
@@ -47,7 +57,7 @@ class RepositoryHelper: ObservableObject {
         }()
         var urlRequest = URLRequest(url: URL(string: urlString)!)
         urlRequest.addValue("token \(githubToken)", forHTTPHeaderField: "Authorization")
-        cancellable = URLSession.shared.dataTaskPublisher(for: urlRequest)
+        let publisher = URLSession.shared.dataTaskPublisher(for: urlRequest)
             .map { $0.data }
             .decode(type: [Repository].self, decoder: JSONDecoder())
             .receive(on: RunLoop.main)
@@ -61,6 +71,7 @@ class RepositoryHelper: ObservableObject {
                     self.pulls(for: repo.full_name)
                 }
             })
+        cancellables.append(publisher)
     }
     
     func pulls(for repo: String) {
@@ -85,7 +96,7 @@ class RepositoryHelper: ObservableObject {
                     }
                 }
             })
-        prCancellables.append(publisher)
+        cancellables.append(publisher)
     }
     
     func pull(repo: String, number: Int) {
@@ -102,7 +113,7 @@ class RepositoryHelper: ObservableObject {
             print(pull)
             self.pulls[repo]?.append(pull)
         })
-        prCancellables.append(publisher)
+        cancellables.append(publisher)
     }
     
     func settingsUpdated(token: String, enterpriseEnabled: Bool, baseUrl: String?, org: String?) {
@@ -113,6 +124,7 @@ class RepositoryHelper: ObservableObject {
         } else {
             enterpriseUrl = nil
         }
+        self.poll()
     }
 }
 
@@ -137,13 +149,11 @@ struct PullRequest: Codable {
     let mergeable_state: String
     var mergeableDisplayValue: String {
         if let mergeable = mergeable {
-            return mergeable ? "🟢": "🔴"
+            if !mergeable { return "🔴" }
+            return mergeable_state == "clean" ? "🟢": "🔴"
         } else {
             return "🟠"
         }
-    }
-    var isMine: Bool {
-        author_association == "OWNER"
     }
 }
 

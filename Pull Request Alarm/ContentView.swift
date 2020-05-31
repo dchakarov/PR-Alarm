@@ -52,7 +52,7 @@ struct ContentView: View {
                         Section(header: Text("\(repo.name)")) {
                             ForEach(self.helper.pulls[repo.full_name]!, id: \.id) { pull in
                                 Group {
-                                    if pull.isMine || !self.mineOnly {
+                                    if pull.user.login == self.helper.userLogin || !self.mineOnly {
                                         HStack {
                                             Text("\(pull.mergeableDisplayValue)")
                                             Text("\(pull.title)")
@@ -66,9 +66,6 @@ struct ContentView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .onAppear {
-            self.helper.poll()
-        }
     }
 }
 
