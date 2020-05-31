@@ -144,7 +144,7 @@ struct PullRequest: Codable {
     let id: Int32
     let title: String
     let user: User
-    let author_association: String
+    let html_url: URL
     let mergeable: Bool?
     let mergeable_state: String
     var mergeableDisplayValue: String {

@@ -55,7 +55,9 @@ struct ContentView: View {
                                     if pull.user.login == self.helper.userLogin || !self.mineOnly {
                                         HStack {
                                             Text("\(pull.mergeableDisplayValue)")
-                                            Text("\(pull.title)")
+                                            Button("\(pull.title)") {
+                                                NSWorkspace.shared.open(pull.html_url)
+                                            }
                                         }.padding([.horizontal])
                                     }
                                 }
