@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3371D03E248698C10080EF13 /* PullRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3371D03D248698C10080EF13 /* PullRequest.swift */; };
+		3371D040248698E70080EF13 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3371D03F248698E70080EF13 /* Repository.swift */; };
+		3371D042248698FA0080EF13 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3371D041248698FA0080EF13 /* User.swift */; };
 		3399CE2A2481CA7800A328FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3399CE292481CA7800A328FD /* AppDelegate.swift */; };
 		3399CE2C2481CA7800A328FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3399CE2B2481CA7800A328FD /* ContentView.swift */; };
 		3399CE2E2481CA7B00A328FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3399CE2D2481CA7B00A328FD /* Assets.xcassets */; };
@@ -28,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3371D03D248698C10080EF13 /* PullRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequest.swift; sourceTree = "<group>"; };
+		3371D03F248698E70080EF13 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		3371D041248698FA0080EF13 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3399CE262481CA7800A328FD /* Pull Request Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pull Request Alarm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3399CE292481CA7800A328FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3399CE2B2481CA7800A328FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +96,9 @@
 				3399CE352481CA7B00A328FD /* Info.plist */,
 				3399CE362481CA7B00A328FD /* Pull_Request_Alarm.entitlements */,
 				3399CE2F2481CA7B00A328FD /* Preview Content */,
+				3371D03D248698C10080EF13 /* PullRequest.swift */,
+				3371D03F248698E70080EF13 /* Repository.swift */,
+				3371D041248698FA0080EF13 /* User.swift */,
 			);
 			path = "Pull Request Alarm";
 			sourceTree = "<group>";
@@ -219,8 +228,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3399CE4B2481DABA00A328FD /* RepositoryHelper.swift in Sources */,
+				3371D042248698FA0080EF13 /* User.swift in Sources */,
 				3399CE2C2481CA7800A328FD /* ContentView.swift in Sources */,
+				3371D03E248698C10080EF13 /* PullRequest.swift in Sources */,
 				3399CE2A2481CA7800A328FD /* AppDelegate.swift in Sources */,
+				3371D040248698E70080EF13 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
