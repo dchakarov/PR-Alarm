@@ -14,7 +14,7 @@ struct ContentView: View {
     @State var mineOnly: Bool = false
     @State var enterpriseGitHub: Bool = false
     @State var enterpriseGitHubUrl: String = ""
-    @State var enterpriseGitHubOrg: String = ""
+    @State var gitHubOrg: String = ""
 
     var body: some View {
         VStack {
@@ -22,6 +22,7 @@ struct ContentView: View {
                 HStack {
                     SecureField("GitHub Token", text: $token)
                     Spacer()
+                    TextField("GitHub Org, e.g. my-team", text: $gitHubOrg)
                 }.padding([.horizontal, .top])
                 HStack {
                     Toggle(isOn: $enterpriseGitHub) {
@@ -29,12 +30,11 @@ struct ContentView: View {
                     }
                     if enterpriseGitHub {
                         TextField("GitHub URL, e.g. github.company.com", text: $enterpriseGitHubUrl)
-                        TextField("GitHub Org, e.g. my-team", text: $enterpriseGitHubOrg)
                     }
                     Spacer()
                 }.padding([.horizontal])
                 Button("Update") {
-                    self.helper.settingsUpdated(token: self.token, enterpriseEnabled: self.enterpriseGitHub, baseUrl: self.enterpriseGitHubUrl, org: self.enterpriseGitHubOrg)
+                    self.helper.settingsUpdated(token: self.token, enterpriseEnabled: self.enterpriseGitHub, url: self.enterpriseGitHubUrl, org: self.gitHubOrg)
                 }.disabled(token.isEmpty)
                 if !token.isEmpty {
                     Divider()
