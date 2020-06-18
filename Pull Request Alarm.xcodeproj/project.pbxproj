@@ -19,6 +19,7 @@
 		3399CE402481CA7B00A328FD /* Pull_Request_AlarmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3399CE3F2481CA7B00A328FD /* Pull_Request_AlarmTests.swift */; };
 		3399CE4B2481DABA00A328FD /* RepositoryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3399CE4A2481DABA00A328FD /* RepositoryHelper.swift */; };
 		3399CE4E24834AE400A328FD /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 3399CE4D24834AE400A328FD /* KeychainAccess */; };
+		33A6F9BD2496953F000FA277 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A6F9BC2496953F000FA277 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		3399CE3F2481CA7B00A328FD /* Pull_Request_AlarmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pull_Request_AlarmTests.swift; sourceTree = "<group>"; };
 		3399CE412481CA7B00A328FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3399CE4A2481DABA00A328FD /* RepositoryHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryHelper.swift; sourceTree = "<group>"; };
+		33A6F9BC2496953F000FA277 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				3399CE292481CA7800A328FD /* AppDelegate.swift */,
 				3399CE2B2481CA7800A328FD /* ContentView.swift */,
 				3399CE4A2481DABA00A328FD /* RepositoryHelper.swift */,
+				33A6F9BC2496953F000FA277 /* Settings.swift */,
 				3399CE2D2481CA7B00A328FD /* Assets.xcassets */,
 				3399CE322481CA7B00A328FD /* Main.storyboard */,
 				3399CE352481CA7B00A328FD /* Info.plist */,
@@ -232,6 +235,7 @@
 			files = (
 				3399CE4B2481DABA00A328FD /* RepositoryHelper.swift in Sources */,
 				3371D042248698FA0080EF13 /* User.swift in Sources */,
+				33A6F9BD2496953F000FA277 /* Settings.swift in Sources */,
 				3399CE2C2481CA7800A328FD /* ContentView.swift in Sources */,
 				3371D0442488689D0080EF13 /* GitHubClient.swift in Sources */,
 				3371D03E248698C10080EF13 /* PullRequest.swift in Sources */,

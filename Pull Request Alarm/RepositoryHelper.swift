@@ -13,8 +13,13 @@ class RepositoryHelper: ObservableObject {
     var repositories = [Repository]()
     @Published var pulls = [String: [PullRequest]]()
     @Published var reposWithPRs: [Repository] = []
-    @Published var enterpriseUrl: String?
-    var org: String?
+    @Published private var settings: Settings = Settings()
+    var org: String? {
+        settings.org
+    }
+    var customUrl: String? {
+        settings.customUrl
+    }
     private var cancellableBag = Set<AnyCancellable>()
     var gitHubClient = GitHubClient(token: "")
     
@@ -24,7 +29,7 @@ class RepositoryHelper: ObservableObject {
     let publicUrl = "api.github.com"
     
     var baseUrl: String {
-        if let url = self.enterpriseUrl {
+        if let url = self.customUrl {
             return "\(url)/api/v3"
         } else {
             return publicUrl
@@ -102,11 +107,13 @@ class RepositoryHelper: ObservableObject {
     
     func settingsUpdated(token: String, enterpriseEnabled: Bool, url: String?, org: String?) {
         githubToken = token
-        self.org = org
+        if let org = org {
+            settings.org = org
+        }
         if enterpriseEnabled {
-            enterpriseUrl = url
+            settings.customUrl = url
         } else {
-            enterpriseUrl = nil
+            settings.customUrl = nil
         }
         gitHubClient = GitHubClient(token: githubToken, baseUrl: baseUrl)
         self.poll()

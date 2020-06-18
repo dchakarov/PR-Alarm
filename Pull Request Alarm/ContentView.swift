@@ -67,6 +67,11 @@ struct ContentView: View {
                 }
             }
         }
+        .onAppear {
+            self.gitHubOrg = self.helper.org ?? ""
+            self.enterpriseGitHubUrl = self.helper.customUrl ?? ""
+            self.enterpriseGitHub = self.helper.customUrl != nil
+        }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
