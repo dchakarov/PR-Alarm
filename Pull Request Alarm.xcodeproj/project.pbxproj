@@ -20,6 +20,7 @@
 		3399CE4B2481DABA00A328FD /* RepositoryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3399CE4A2481DABA00A328FD /* RepositoryHelper.swift */; };
 		3399CE4E24834AE400A328FD /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 3399CE4D24834AE400A328FD /* KeychainAccess */; };
 		33A6F9BD2496953F000FA277 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A6F9BC2496953F000FA277 /* Settings.swift */; };
+		33A6F9CB249C4699000FA277 /* MergeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A6F9CA249C4699000FA277 /* MergeResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		3399CE412481CA7B00A328FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3399CE4A2481DABA00A328FD /* RepositoryHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryHelper.swift; sourceTree = "<group>"; };
 		33A6F9BC2496953F000FA277 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		33A6F9CA249C4699000FA277 /* MergeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				3371D03F248698E70080EF13 /* Repository.swift */,
 				3371D041248698FA0080EF13 /* User.swift */,
 				3371D0432488689D0080EF13 /* GitHubClient.swift */,
+				33A6F9CA249C4699000FA277 /* MergeResponse.swift */,
 			);
 			path = "Pull Request Alarm";
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				3371D0442488689D0080EF13 /* GitHubClient.swift in Sources */,
 				3371D03E248698C10080EF13 /* PullRequest.swift in Sources */,
 				3399CE2A2481CA7800A328FD /* AppDelegate.swift in Sources */,
+				33A6F9CB249C4699000FA277 /* MergeResponse.swift in Sources */,
 				3371D040248698E70080EF13 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

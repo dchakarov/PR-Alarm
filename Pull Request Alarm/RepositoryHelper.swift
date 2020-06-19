@@ -105,6 +105,20 @@ class RepositoryHelper: ObservableObject {
         .store(in: &cancellableBag)
     }
     
+    func merge(repo: String, number: Int) {
+        gitHubClient.merge(repo: repo, number: number)
+            .receive(on: RunLoop.main)
+            .sink { result in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let res):
+                    print(res)
+                }
+        }
+        .store(in: &cancellableBag)
+    }
+    
     func settingsUpdated(token: String, enterpriseEnabled: Bool, url: String?, org: String?) {
         githubToken = token
         if let org = org {
