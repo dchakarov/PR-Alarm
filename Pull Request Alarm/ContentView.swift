@@ -53,12 +53,7 @@ struct ContentView: View {
                             ForEach(self.helper.pulls[repo.full_name]!, id: \.id) { pull in
                                 Group {
                                     if pull.user.login == self.helper.userLogin || !self.mineOnly {
-                                        HStack {
-                                            Text("\(pull.mergeableDisplayValue)")
-                                            Button("\(pull.title)") {
-                                                NSWorkspace.shared.open(pull.html_url)
-                                            }
-                                        }.padding([.horizontal])
+                                        PRCell(helper: self.helper, repo: repo, pull: pull)
                                     }
                                 }
                             }
@@ -80,5 +75,26 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct PRCell: View {
+    let helper: RepositoryHelper
+    let repo: Repository
+    let pull: PullRequest
+    
+    var body: some View {
+        HStack {
+            Text("\(pull.mergeableDisplayValue)")
+            Button("\(pull.title)") {
+                NSWorkspace.shared.open(self.pull.html_url)
+            }
+            if pull.mergeableDisplayValue == "🟢" {
+                Button("Merge") {
+                    self.helper.merge(repo: self.repo.full_name, number: self.pull.number)
+                }
+            }
+        }.padding([.horizontal])
+        
     }
 }

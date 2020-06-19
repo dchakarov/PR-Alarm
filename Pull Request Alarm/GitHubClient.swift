@@ -25,37 +25,47 @@ struct GitHubClient {
                 .catch { _ in Empty().eraseToAnyPublisher() }
                 .eraseToAnyPublisher()
         }
-        return myDataTaskPublisher(for: urlRequest)
+        return gitHubDataTaskPublisher(for: urlRequest)
     }
     
     func repos(org: String?) -> AnyPublisher<Result<[Repository], NetworkError>, Never> {
-        guard let urlRequest = urlRequest(for: .repository(org)) else {
+        guard let urlRequest = urlRequest(for: .repository(org: org)) else {
             return Just(.failure(NetworkError.invalidRequest))
                 .catch { _ in Empty().eraseToAnyPublisher() }
                 .eraseToAnyPublisher()
         }
-        return myDataTaskPublisher(for: urlRequest)
+        return gitHubDataTaskPublisher(for: urlRequest)
     }
     
     func pulls(for repo: String) -> AnyPublisher<Result<[PullRequestId], NetworkError>, Never> {
-        guard let urlRequest = urlRequest(for: .pullrequests(repo)) else {
+        guard let urlRequest = urlRequest(for: .pullRequests(repo: repo)) else {
             return Just(.failure(NetworkError.invalidRequest))
                 .catch { _ in Empty().eraseToAnyPublisher() }
                 .eraseToAnyPublisher()
         }
-        return myDataTaskPublisher(for: urlRequest)
+        return gitHubDataTaskPublisher(for: urlRequest)
     }
     
     func pull(repo: String, number: Int) -> AnyPublisher<Result<PullRequest, NetworkError>, Never> {
-        guard let urlRequest = urlRequest(for: .pullrequest(repo, number)) else {
+        guard let urlRequest = urlRequest(for: .pullRequest(repo: repo, number: number)) else {
             return Just(.failure(NetworkError.invalidRequest))
                 .catch { _ in Empty().eraseToAnyPublisher() }
                 .eraseToAnyPublisher()
         }
-        return myDataTaskPublisher(for: urlRequest)
+        return gitHubDataTaskPublisher(for: urlRequest)
     }
     
-    func myDataTaskPublisher<T: Decodable>(for urlRequest: URLRequest) -> AnyPublisher<Result<T, NetworkError>, Never> {
+    func merge(repo: String, number: Int) -> AnyPublisher<Result<MergeResponse, NetworkError>, Never> {
+        guard var urlRequest = urlRequest(for: .mergePullRequest(repo: repo, number: number)) else {
+            return Just(.failure(NetworkError.invalidRequest))
+                .catch { _ in Empty().eraseToAnyPublisher() }
+                .eraseToAnyPublisher()
+        }
+        urlRequest.httpMethod = "PUT"
+        return gitHubDataTaskPublisher(for: urlRequest)
+    }
+    
+    func gitHubDataTaskPublisher<T: Decodable>(for urlRequest: URLRequest) -> AnyPublisher<Result<T, NetworkError>, Never> {
         session.dataTaskPublisher(for: urlRequest)
             .mapError { _ in NetworkError.invalidRequest }
             .flatMap { data, response -> AnyPublisher<Data, Error> in
@@ -90,10 +100,12 @@ struct GitHubClient {
                 } else {
                     return URL(string: "https://\(baseUrl)/user/repos")
                 }
-            case .pullrequests(let repo):
+            case .pullRequests(let repo):
                 return URL(string: "https://\(baseUrl)/repos/\(repo)/pulls")
-            case .pullrequest(let repo, let number):
+            case .pullRequest(let repo, let number):
                 return URL(string: "https://\(baseUrl)/repos/\(repo)/pulls/\(number)")
+            case .mergePullRequest(let repo, let number):
+                return URL(string: "https://\(baseUrl)/repos/\(repo)/pulls/\(number)/merge")
             }
         }()
         guard let url = endpointUrl else { return nil }
@@ -105,9 +117,10 @@ struct GitHubClient {
 
 enum Endpoint {
     case user
-    case repository(String?)
-    case pullrequests(String)
-    case pullrequest(String, Int)
+    case repository(org: String?)
+    case pullRequests(repo: String)
+    case pullRequest(repo: String, number: Int)
+    case mergePullRequest(repo: String, number: Int)
 }
 
 enum NetworkError: Error {
