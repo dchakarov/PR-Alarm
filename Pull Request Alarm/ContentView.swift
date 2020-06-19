@@ -15,7 +15,8 @@ struct ContentView: View {
     @State var enterpriseGitHub: Bool = false
     @State var enterpriseGitHubUrl: String = ""
     @State var gitHubOrg: String = ""
-
+    var alarmDaemon = AlarmDaemon()
+    
     var body: some View {
         VStack {
             Section {
@@ -35,6 +36,7 @@ struct ContentView: View {
                 }.padding([.horizontal])
                 Button("Update") {
                     self.helper.settingsUpdated(token: self.token, enterpriseEnabled: self.enterpriseGitHub, url: self.enterpriseGitHubUrl, org: self.gitHubOrg)
+                    self.alarmDaemon.start(using: self.helper)
                 }.disabled(token.isEmpty)
                 if !token.isEmpty {
                     Divider()

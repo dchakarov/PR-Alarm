@@ -130,6 +130,5 @@ class RepositoryHelper: ObservableObject {
             settings.customUrl = nil
         }
         gitHubClient = GitHubClient(token: githubToken, baseUrl: baseUrl)
-        self.poll()
     }
 }
