@@ -62,15 +62,16 @@ class RepositoryHelper: ObservableObject {
                     self.repositories = repos
                     self.reposWithPRs = []
                     for repo in repos {
-                        self.pulls(for: repo.full_name)
+                        self.pulls(for: repo)
                     }
                 }
         }
         .store(in: &cancellableBag)
     }
     
-    func pulls(for repo: String) {
-        gitHubClient.pulls(for: repo)
+    func pulls(for repo: Repository) {
+        let repoName = repo.full_name
+        gitHubClient.pulls(for: repoName)
             .receive(on: RunLoop.main)
             .sink { result in
                 switch result {
@@ -78,12 +79,10 @@ class RepositoryHelper: ObservableObject {
                     print(error)
                 case .success(let pulls):
                     if !pulls.isEmpty {
-                        self.reposWithPRs.append(self.repositories.first(where: { r -> Bool in
-                            r.full_name == repo
-                        })!)
-                        self.pulls[repo] = []
+                        self.reposWithPRs.append(repo)
+                        self.pulls[repoName] = []
                         for pullId in pulls {
-                            self.pull(repo: repo, number: pullId.number)
+                            self.pull(repo: repoName, number: pullId.number)
                         }
                     }
                 }
